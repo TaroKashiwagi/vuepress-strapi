@@ -5,6 +5,7 @@ div
 
 <script>
 import Vue from 'vue'
+import axios from 'axios'
 
 export default {
   components: {
@@ -12,6 +13,10 @@ export default {
   computed: {
   },
   created () {
+    axios.get('http://localhost:1337/tests')
+      .then(response => {
+        console.log(response.data)
+      })
   },
   mounted () {
   },

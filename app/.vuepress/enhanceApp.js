@@ -5,25 +5,10 @@ import axios from 'axios'
 
 const axiosSetup = ()=>{
   //いつか別ファイルで定義する
-  const apiBaseUrl = "https://asia-northeast1-manga-cp.cloudfunctions.net";
-  const token = "nKtNTVZrTXRAQR-jN5UirntkdS82crLeGXk456Pkdb3m7zL586"
+  const apiBaseUrl = "http://localhost:1337/tests";
   const http = axios.create({
     baseURL: apiBaseUrl
   });
-
-  //tokenの設定
-  http.interceptors.request.use((config) => {
-    if (token) {  
-      config.headers.Authorization = `Bearer ${token}`;
-      return config;
-    }
-    return config;
-  }, function (error) {
-    return Promise.reject(error);
-  });
-
-
-
   return http;
 }
 
