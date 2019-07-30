@@ -20,7 +20,7 @@ export default ({
 }) => {
   //setup axios
   Vue.prototype.$http = axiosSetup();
-  
+
   //setup mixins
   Vue.mixin(TitleMixin);
   Vue.mixin({store: store});
